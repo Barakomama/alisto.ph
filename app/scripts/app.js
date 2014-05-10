@@ -6,7 +6,10 @@ angular
     'ngResource',
     'ngSanitize',
     'ui.router',
-    'firebase'
+    'firebase',
+    'angularfire.firebase',
+    'angularfire.login',
+    'simpleLoginTools'
 
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
