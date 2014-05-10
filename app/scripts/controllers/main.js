@@ -1,14 +1,10 @@
 'use strict';
 
 angular.module('alistophApp')
-  .controller('MainCtrl', function ($scope, auth, user) {
-    
-    $scope.login = function (provider) {
-      auth.login(provider, function(err, user) {
-        $scope.err = err? err + '' : null;
-      });
-    };
+  .controller('MainCtrl', function ($scope, AuthService, UserService) {
 
-    $scope.isLoggedIn = auth.isLoggedIn;
-    
+    $scope.login = function (provider) {
+      AuthService.login(provider);
+    };
+    console.log(UserService.isLoggedIn());
   });
