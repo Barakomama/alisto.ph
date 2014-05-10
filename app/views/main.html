@@ -1,6 +1,6 @@
 <h1>Login</h1>
 <button ng-click="login('facebook')">Login</button>
-<p>{{user.avatar}}</p>
+<p>{{currentUser.avatar}}</p>
 <h1>Report</h1>
 <form ng-submit="report()">
   <input type="text" ng-model="incident.coords">
@@ -8,7 +8,10 @@
   <input type="text" ng-model="incident.type">
   <button type="submit">Submit</button>
 </form>
+<h1>Dispatcher Agency</h1>
+<p>{{currentUser.agency}}</p>
 <h1>Dispatch</h1>
 <form action="" ng-submit="respond()">
   <input type="text" ng-model="selected" disabled>
 </form>
+

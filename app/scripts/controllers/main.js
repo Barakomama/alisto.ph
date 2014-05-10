@@ -12,8 +12,4 @@ angular.module('alistophApp')
       IncidentService.create($scope.incident);
     };
 
-    $scope.respond = function(){
-      
-    }
-
   });

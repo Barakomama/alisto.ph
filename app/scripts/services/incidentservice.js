@@ -24,7 +24,11 @@ angular.module('alistophApp')
       },
       findById: function(id){
         return incidents.$child(id);
+      },
+      respond: function() {
+        
       }
+
     }
 
   });
