@@ -8,16 +8,17 @@ angular
     'ui.router',
     'firebase',
     'angularfire.firebase',
-    'simpleLoginTools'
+    'simpleLoginTools',
+    'ngMap'
 
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
-    // sample
+
     $stateProvider
       .state('home',{
         url: '/',
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
       });
   });
