@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('alistophApp')
-  .controller('MainCtrl', function ($scope, simpleLogin) {
+  .controller('MainCtrl', function ($scope, auth) {
     
     $scope.login = function (provider) {
-      simpleLogin.login(provider, function(err) {
+      auth.login(provider, function(err, user) {
         $scope.err = err? err + '' : null;
       });
-    }
-
+    };
+    
   });
