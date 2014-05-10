@@ -8,7 +8,6 @@ angular
     'ui.router',
     'firebase',
     'angularfire.firebase',
-    'angularfire.login',
     'simpleLoginTools'
 
   ])

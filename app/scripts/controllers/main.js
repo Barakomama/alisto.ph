@@ -1,10 +1,19 @@
 'use strict';
 
 angular.module('alistophApp')
-  .controller('MainCtrl', function ($scope, AuthService, UserService) {
+  .controller('MainCtrl', function ($scope, AuthService, UserService, IncidentService) {
 
     $scope.login = function (provider) {
       AuthService.login(provider);
     };
-    console.log(UserService.isLoggedIn());
+    $scope.selected = '-JMa-crYhTV34BWGPv-D';
+    $scope.incident = {};
+    $scope.report = function(){
+      IncidentService.create($scope.incident);
+    };
+
+    $scope.respond = function(){
+      
+    }
+
   });
