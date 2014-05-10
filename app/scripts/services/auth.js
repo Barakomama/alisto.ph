@@ -5,12 +5,6 @@ angular.module('alistophApp')
     var ref = firebaseRef();
     var auth = $firebaseSimpleLogin(ref);
 
-    function assertAuth() {
-      if (auth === null) {
-        throw new Error('Initialize first this service');
-      };
-    }
-
     function getPicURL(id, large) {
       return 'https://graph.facebook.com/' + (id) +
              '/picture/?type=' + (large ? 'large' : 'square') +
@@ -18,12 +12,7 @@ angular.module('alistophApp')
     }
 
     var Auth = {
-      init: function () {
-        return auth;
-      },
-      login: function(provider,callback){
-        assertAuth();
-
+      login: function(provider){
         return auth.$login(provider, {rememberMe: true, preferRedirect: true}).then(function(user) {
           var userRef = firebaseRef('users/' + user.id);
           userRef.once('value', function(snapshot){
@@ -43,22 +32,16 @@ angular.module('alistophApp')
             } else {
               info = val;
             }
-            $rootScope.currentUser = info.id;
+            $rootScope.currentUser = val;
           });
-          
-          if( callback ) {
-            //todo-bug https://github.com/firebase/angularFire/issues/199
-            $timeout(function() {
-              callback(null, user);
-            });
-          }
-        }, callback);
+        });
       },
       isLoggedIn: function() {
-        return auth.user !== null;
+        return auth.user;
+      },
+      logout: function(){
+        return auth.$logout;
       }
     }
-
-    Auth.init();
     return Auth;
   });
