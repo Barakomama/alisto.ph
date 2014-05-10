@@ -3,9 +3,9 @@
 <p>{{currentUser.avatar}}</p>
 <h1>Report</h1>
 <form ng-submit="report()">
-  <input type="text" ng-model="incident.coords">
-  <input type="text" ng-model="incident.description">
-  <input type="text" ng-model="incident.type">
+  <input type="text" ng-model="incident.field.coord">
+  <input type="text" ng-model="incident.field.type">
+  <input type="text" ng-model="incident.comment">
   <button type="submit">Submit</button>
 </form>
 <h1>Dispatcher Agency</h1>

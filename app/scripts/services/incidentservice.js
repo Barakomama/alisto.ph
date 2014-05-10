@@ -11,13 +11,19 @@ angular.module('alistophApp')
       all: incidents,
       create: function(obj){
         var user = UserService.getCurrentUser();
-        obj.createdAt = Firebase.ServerValue.TIMESTAMP;
-        obj.reporter = user.id;
-        obj.status = 'nohelp'
+        var incident = {};
+        incident.coordinates = obj.field.coord;
+        incident.type = obj.field.type;
+        incident.createdAt = Firebase.ServerValue.TIMESTAMP;
+        incident.reporter = user.id;
+        incident.status = 'reported';
+        incident.score = 1;
 
-        return incidents.$add(obj).then(function(re){
+        return incidents.$add(incident).then(function(re){
           // add id field
           incidents.$child(re.name()).$child('id').$set(re.name());
+          // push comment
+          incidents.$child(re.name()).$child('comments').$add({content: obj.comment, author: user.id});
           // persist to reporter
           user.$child('reports').$child(re.name()).$child('id').$set({id: re.name()});
         });
