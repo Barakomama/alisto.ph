@@ -19,18 +19,7 @@
                 <div class="media">
                     <i class="fa fa-circle-o img"></i>
                     <div class="bd">
-                        <select class="line-input">
-                            <option>Fire</option>
-                            <option>Flood</option>
-                            <option>Oil Spill</option>
-                            <option>Vehicular Accident</option>
-                            <option>Crime</option>
-                            <option>Epidemic</option>
-                            <option>Earthquake</option>
-                            <option>Volcanic Activity</option>
-                            <option>Landslide</option>
-                            <option>Radioactive Hazard</option>
-                            <option>Fire</option>
+                        <select ng-change="modify('type', getSelectedValue(selectedIncident.type))" class="line-input" ng-model="selectedIncident.type" ng-options="v.name for v in incidentTypes.values">
                         </select>
                     </div>
                 </div>
@@ -48,7 +37,7 @@
                 <div class="media">
                     <i class="fa fa-map-marker img"></i>
                     <div class="bd">
-                        <input type="text" class="line-input" placeholder="Address" />
+                        <input ng-change="modify('address', selectedIncident.address)" type="text" class="line-input" placeholder="Address" ng-model="selectedIncident.address">
                     </div>
                 </div>
                 <div class="media">
@@ -61,7 +50,7 @@
                 <div class="media">
                     <i class="fa fa-map-marker img"></i>
                     <div class="bd">
-                        <textarea class="line-input" placeholder="Description"></textarea>
+                        <textarea ng-change="modify('description', selectedIncident.description)" class="line-input" ng-model="selectedIncident.description" placeholder="Description"></textarea>
                     </div>
                 </div>
             </div>
@@ -79,7 +68,7 @@
             <div class="media-wrapper wide units">
                 <div class="media">                
                     <select class="icon-select img">
-                        <option>&#xf007;</option>
+                        <<option value=""></option>>&#xf007;</option>
                         <option>&#xf0c0;</option>
                         <option>&#xf0d1;</option>
                         <option>&#xf0f9;</option>
@@ -101,9 +90,9 @@
                         <option>&#xf02d;</option>
                     </select>
                     <div class="bd">
-                        <input type="number" min="0" class="line-input" placeholder="No." />
-                        <input type="text" class="line-input unit-name" placeholder="Name" />
-                        <a class="save pull-right icon-button" href="#"><i class="fa fa-check-circle"></i></a>
+                        <input type="number" min="0" class="line-input" placeholder="No." ng-model="responseUnits.number"/>
+                        <input type="text" class="line-input unit-name" placeholder="Name" ng-model="responseUnits.name"/>
+                        <a class="save pull-right icon-button"><i class="fa fa-check-circle" ng-click="respond()"></i></a>
                     </div>
                 </div>
             </div>
