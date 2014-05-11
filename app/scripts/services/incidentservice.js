@@ -40,6 +40,9 @@ address:"Batanganes City",description:"Lorem ipsum dolor sit amet.",responseUnit
       },
       respond: function() {
         
+      },
+      update: function(incident, field, value) {
+        incident.$child(incident).$child(field).$set(value);
       }
 
     }

@@ -22,6 +22,12 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       });
+    // $stateProvider
+    //   .state('home',{
+    //     url: '/',
+    //     templateUrl: 'views/main.html',
+    //     controller: 'MainCtrl'
+    //   });
     $stateProvider
       .state('dispatch',{
         url: '/dispatch',

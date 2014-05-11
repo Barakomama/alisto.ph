@@ -7,7 +7,7 @@ angular.module('alistophApp')
     }
 
     $scope.map.markers = {}
-    $scope.incidents = IncidentService.getDemo();
+    $scope.incidents = IncidentService.all;
 
     $scope.map.getCoords = function(event){
       var lat = event.latLng.lat();
