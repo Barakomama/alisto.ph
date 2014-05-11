@@ -1,4 +1,4 @@
-<div ng-include="'views/inc/map.html'"></div>
+<div ng-controller="MapCtrl"  ng-include="'views/inc/map.html'"></div>
 <!--        
   <div id="content">
     <div class="modal">
@@ -124,7 +124,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">FAQs</a></li>
                 <li>
-                    <button>
+                    <button ng-show="isLoggedIn()" ng-controller="MainCtrl" ng-click="login('facebook')">
                         <i class="fa fa-facebook-square"></i> Login
                     </button>
                 </li>
