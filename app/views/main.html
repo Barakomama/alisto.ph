@@ -1,0 +1,35 @@
+<h1>Login</h1>
+<button ng-click="login('facebook')">Login</button>
+<p>{{currentUser.avatar}}</p>
+<h1>Report</h1>
+<form ng-submit="report()">
+  <input type="text" ng-model="incident.field.coord.lat" placeholder="coords.lat">
+  <input type="text" ng-model="incident.field.coord.long" placeholder="coords.long">
+  <input type="text" ng-model="incident.field.type" placeholder="type">
+  <input type="text" ng-model="incident.comment" placeholder="description">
+  <button type="submit">Submit</button>
+</form>
+<h1>Dispatcher Agency</h1>
+<p>{{currentUser.agency}}</p>
+<h1>Dispatch</h1>
+<form action="" ng-submit="respond()">
+  <input type="text" ng-model="selected" disabled>
+</form>
+
+<h1>Agency</h1>
+<form action="" ng-submit="agencyCreate()">
+  <input type="text" ng-model="agency.name" placeholder="agency name">
+  <input type="text" ng-model="agency.location" placeholder="agency location">
+  <input type="text" ng-model="agency.coordinates" placeholder="coords">
+  <input type="text" ng-model="agency.scope" placeholder="scope">
+  <button type="submit">Submit</button>
+</form>
+
+<h1>Deploy</h1>
+<form action="" ng-submit="deploy()">
+  <input type="text" ng-model="deployment.resource.name" placeholder="equiment">
+  <input type="text" ng-model="agency.resource.count" placeholder="agency location">
+  <input type="text" ng-model="agency.coordinates" placeholder="coords">
+  <input type="text" ng-model="agency.scope" placeholder="scope">
+  <button type="submit">Submit</button>
+</form>

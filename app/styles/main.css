@@ -1,0 +1,461 @@
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+        url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+        url('../fonts/Roboto-Light-webfont.svg#robotoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+button, a {
+    outline: none;
+}
+
+* {
+    color: #222;
+    font-family: 'RobotoLight','Helvetica',Arial,sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-family: 'Bebas', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.logo {
+    color: #ffe103;
+    display: inline-block;
+    font-size: 4em;
+    text-shadow: 0 2px 0 #222;
+}
+html, body {
+    margin: 0px;
+    padding: 0px
+}
+header {
+    background: #333;
+    border-bottom: #222 solid 1px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    padding: 0 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 3;
+}
+
+.icon-button .fa {
+    color: #1c4566 !important;
+    opacity: 0.9;
+}
+.icon-button:hover .fa {
+    opacity: 1;
+}
+
+.save {
+    position: relative;
+    top: 6px;
+}
+
+.icon-select {
+    content: "\f000";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    background: #fff;
+    border: none;
+    border-right: #ccc solid 1px;
+    border-bottom: #ccc solid 1px;
+    border-radius: 3px;
+    width: 50px !important;
+    margin-top: -3px;
+    padding: 5px !important;
+    font-size: 1em;
+    outline: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+header a {
+    transition: all .4s ease;
+}
+header a:hover {
+    text-decoration: none;
+    border-bottom: #ffe103 solid 3px;
+    background: #3f3f3f;
+    transition: all .4s ease;
+}
+button.block, .button.block {
+    display: block;
+    clear: both;
+    width: 75%;
+    padding: 15px;
+    margin: 0 auto 20px auto;
+}
+.button, button {
+    cursor: pointer;
+    background: #ffe103;
+    border: none;
+    border-radius: 3px;
+    color: #222 !important;
+    font-size: 1em;
+}
+.menu button {
+    padding: 10px 20px;
+    margin: 0 15px;
+}
+.menu {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 60px;
+}
+.menu li {
+    display: inline-block;
+}
+.menu li a {
+    color: #ffe103;
+    display: inline-block;
+    padding: 24px;
+}
+
+#content {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 70px;
+    left: 320px;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all .4s ease;
+}
+
+#content.visible {
+    opacity: 1;
+    z-index: 1;
+    transition: all .4s ease;
+}
+
+#content.full-width {
+    left: 0;
+    transition: all .4s ease;
+}
+
+.content {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.content input[type="text"], .content input[type="password"] {
+    width: 85%;
+}
+
+input[type="text"], input[type="password"] {
+    border: rgba(0,0,0,0.25) solid 1px;
+    font-size: 1em;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+    border-color: rgba(0,0,0,0.4);
+}
+
+.modal {
+    background: #f6f6f6;
+    border-radius: 3px;
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.075);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+    right: 0;
+    margin: auto;
+    height: 320px;
+    width: 320px;
+}
+
+.modal .title {
+    background: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: #ddd solid 1px;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+.modal .close {
+    cursor: pointer;
+    color: #444;
+    font-size: 2em;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+#sidebar {
+    background: #f6f6f6;
+    border-right: rgba(0,0,0,0.25) solid 1px;
+    overflow-y: auto;
+    opacity: 0.9;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    z-index: 2;
+    transition: left .4s ease;
+}
+#sidebar.hidden {
+    left: -321px;
+    transition: left .4s ease;
+}
+#sidebar-toggle {
+    cursor: pointer;
+    display: inline-block;
+    background: #f6f6f6;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding: 34px 18px 26px 12px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0.9;
+    height: 33px;
+    left: 320px;
+    border: rgba(0,0,0,0.25) solid 1px;
+    border-left: none;
+    border-top: none;
+    z-index: 2;
+    transition: background .4s ease, left .4s ease;
+}
+#sidebar-toggle.hidden {
+    background: #ffe103;
+    left: 0;
+    transition: background .4s ease, left .4s ease;
+}
+.fa {
+    margin-right: 5px;
+}
+#sidebar ul {
+    margin: 0 30px;
+}
+#sidebar li {
+    color: #444;
+    font-size: 1em;
+    padding: 18px 0;
+}
+#sidebar li .fa {
+    color: #555;
+    display: inline-block;
+    width: 5%;
+    float: left;
+}
+#sidebar li span {
+    display: inline-block;
+    float: right;
+    width: 90%;
+    position: relative;
+    top: -3px;
+}
+#sidebar ul li:last-child span {
+    margin-bottom: 18px;
+}
+#sidebar h2 {
+    background: #fff;
+    clear: both;
+    font-family: 'RobotoLight';
+    text-transform: none;
+    font-size: 1.15em;
+    padding: 15px 15px 15px 20px;
+    border-bottom: #ddd solid 1px;
+}
+
+.line-input {
+    background: transparent;
+    border: none !important;
+    border-bottom: #999 dashed 1px !important;
+    font-size: 1em;
+    margin: 0;
+    outline: 0;
+}
+
+.pull-right {
+    float: right;
+}
+
+#sidebar input.line-input {
+    position: relative;
+    top: -5px;
+    margin: 0;
+    width: 200px;
+}
+
+#sidebar select {
+    padding: 3px 7px;
+    width: 220px;
+}
+
+#sidebar textarea {
+    resize: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 60px;
+    width: 200px;
+    padding: 0 10px;
+}
+
+.comments .media {
+    margin: 20px 10px;
+}
+.comments .bd {
+    font-size: 0.9em;
+}
+.media .fa {
+    display: inline-block;
+    width: 20px;
+    color: #555;
+}
+.media .name {
+    color: #1c4566;
+    font-weight: bold;
+    display: block;
+}
+.none {
+    text-align: center;
+    padding: 15px;
+    color: #999
+}
+.avatar {
+    background-color: #ccc;
+    background-image: url(../images/default.png);
+    height: 32px;
+    width: 32px;
+}
+
+#map-canvas {
+    background-color: #98d6d8;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+#pac-input {
+    background-color: #222;
+    border: #202020 solid 1px;
+    box-shadow: 0 1px 0 #444;
+    color: #ddd;
+    padding: 5px 20px;
+    width: 400px;
+    font-size: 1em;
+    text-overflow: ellipsis;
+    position: relative;
+    top: -30px;
+    left: 10px;
+    transition: background-color .2s ease, color .2s ease;
+}
+.units {
+    font-size: .9em;
+}
+.unit-name {
+    width: 105px !important;
+}
+.units .fa {
+    font-size: 1.2em;
+    width: auto;
+}
+input[type="number"] {
+    padding: 5px 10px;
+    outline: none;
+    width: 40px !important;
+}
+input[type="text"], input[type="password"] {
+    border: rgba(0,0,0,0.2) solid 1px;
+    font-size: 1em;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+#pac-input:focus {
+    color: #222;
+    outline: none;
+    background-color: #fff;
+    transition: all .2s ease;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+#txtComment {
+    display: block;
+    width: 196px;
+    padding-right: 70px;
+    margin: 0 auto 20px auto;
+    font-size: 0.9em;
+    box-shadow: 0 1px 1px #fff;
+}
+
+#btnComment {
+    float: right;
+    margin-right: 13px;
+    margin-top: -50px;
+    border-radius: 0;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-left: #ccc solid 1px;
+}
+
+.media-wrapper {
+    padding: 5px 10px;
+}
+.media-wrapper.wide {
+    padding: 5px 0;
+}
+.media {
+    margin:10px 15px;
+}
+.media, .bd {
+    overflow:hidden;
+    _overflow:visible;
+    zoom:1;
+}
+.media .img {
+    float:left;
+    margin-right: 10px;
+}
+.media .img.fa {
+    position: relative;
+    top: 4px;
+}
+.media .img img{
+    display:block;
+}
+.media .imgExt{
+    float:right;
+    margin-left: 10px;
+}
+
+.map-title {
+    font-weight: bold;
+}
+
+#save-report, #cancel-report {
+    display: none;
+    margin: 0 2px;
+}

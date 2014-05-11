@@ -1,0 +1,174 @@
+<div ng-include="'views/inc/map.html'"></div>
+<!--        
+  <div id="content">
+    <div class="modal">
+      <div class="title">Sign Up</div>
+        <span class="close">&times;</span>
+        <form class="content">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder="E-mail" />
+        <input type="password" placeholder="Password" />
+        </form>
+    </div>
+  </div>
+-->
+        <div id="sidebar">
+            <h2><i class="fa fa-exclamation-triangle"></i> Incident Information</h2>
+            <div class="media-wrapper">
+                <div class="media">
+                    <i class="fa fa-circle-o img"></i>
+                    <div class="bd">
+                        <select ng-change="modify('type', getSelectedValue(selectedIncident.type))" class="line-input" ng-model="selectedIncident.type" ng-options="v.name for v in incidentTypes.values">
+                        </select>
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-flag-o img"></i>
+                    <div class="bd">
+                        <!--Disable changing of status for civilians-->
+                        <select class="line-input" disabled="disabled">
+                            <option>Reported</option>
+                            <option>Responded</option>
+                            <option>Resolved</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-map-marker img"></i>
+                    <div class="bd">
+                        <input ng-change="modify('address', selectedIncident.address)" type="text" class="line-input" placeholder="{{selectedIncident.coordinates.lat}}" ng-model="selectedIncident.coordinates.lat">
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-clock-o img"></i>
+                    <div class="bd">
+                        <!--Timestamp from JS cannot be edited-->
+                        <input type="text" class="line-input" placeholder="Date & Time" value="{{date | date:'MMMM dd, yyyy HH:mm a'}}" disabled="disabled" />
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-map-marker img"></i>
+                    <div class="bd">
+                        <textarea ng-change="modify('description', selectedIncident.description)" class="line-input" ng-model="selectedIncident.description" placeholder="Description"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!--            <button class="block">
+                            <i class="fa fa-save"></i> Submit
+                        </button>-->
+
+            <h2>
+                <i class="fa fa-flag"></i>
+                Response Units
+                <a class="pull-right icon-button" href="#"><i class="fa fa-plus-circle"></i></a>
+            </h2>
+
+            <div class="media-wrapper wide units">
+                <div class="media">                
+                    <select class="icon-select img">
+                        <<option value=""></option>>&#xf007;</option>
+                        <option>&#xf0c0;</option>
+                        <option>&#xf0d1;</option>
+                        <option>&#xf0f9;</option>
+                        <option>&#xf0d6;</option>
+                        <option>&#xf0f5;</option>
+                        <option>&#xf004;</option>
+                        <option>&#xf043;</option>
+                        <option>&#xf0a1;</option>
+                        <option>&#xf134;</option>
+                        <option>&#xf13d;</option>
+                        <option>&#xf0ad;</option>
+                        <option>&#xf072;</option>
+                        <option>&#xf15c;</option>
+                        <option>&#xf0e3;</option>
+                        <option>&#xf0e7;</option>
+                        <option>&#xf0f7;</option>
+                        <option>&#xf0fa;</option>
+                        <option>&#xf06c;</option>
+                        <option>&#xf02d;</option>
+                    </select>
+                    <div class="bd">
+                        <input type="number" min="0" class="line-input" placeholder="No." ng-model="responseUnits.number"/>
+                        <input type="text" class="line-input unit-name" placeholder="Name" ng-model="responseUnits.name"/>
+                        <a class="save pull-right icon-button"><i class="fa fa-check-circle" ng-click="respond()"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fa fa-medkit"></i> Damage
+                <a class="pull-right icon-button" href="#"><i class="fa fa-plus-circle"></i></a>
+            </h2>
+            <div class="media-wrapper wide units">
+                <div class="media">                
+                    <select class="icon-select img">
+                        <option>&#xf183;</option>
+                        <option>&#xf0c0;</option>
+                        <option>&#xf0d6;</option>
+                        <option>&#xf004;</option>
+                        <option>&#xf015;</option>
+                        <option>&#xf0f7;</option>
+                        <option>&#xf0fa;</option>
+                        <option>&#xf06c;</option>
+                    </select>
+                    <div class="bd">
+                        <input type="number" min="0" class="line-input" placeholder="No." />
+                        <input type="text" class="line-input unit-name" placeholder="Name" />
+                        <a class="save pull-right icon-button" href="#"><i class="fa fa-check-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fa fa-comments"></i> Community Discussion</h2>
+            <div class="comments media-wrapper">
+                <div class="media">
+                    <img class="avatar img" src="http://graph.facebook.com/nelonoel/picture" />
+                    <div class="bd">
+                        <a class="name" href="#">Aaron Noel De Leon</a>
+                        The fire was too huge. Please send in more help as you could.
+                    </div>
+                </div>
+                <div class="media">
+                    <img class="avatar img" src="http://graph.facebook.com/iamspix/picture" />
+                    <div class="bd">
+                        <a class="name" href="#">Joey Hipolito</a>
+                        Tulong! Tuloooong! Sakloloooo. Kailangan ko ng tulong niyoooo. O, 
+                        superhero na pwedeng arkilaheeeen.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span id="sidebar-toggle">
+            <i class="fa fa-chevron-left"></i>
+        </span>
+
+        <header>
+            <img class="logo" src="images/logo.png" alt="Alisto.PH">
+            <input id="pac-input" type="text"
+                   placeholder="Enter location">
+            <ul class="menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Agency</a></li>
+                <li>
+                    <a href="#">
+                        Log out
+                    </a>
+                </li>
+                <li>
+                    <button id="report-incident">
+                        <i class="fa fa-bullhorn"></i>
+                        Report Incident
+                    </button>
+                    <button id="save-report">
+                        <i class="fa fa-save"></i>
+                        Save Report
+                    </button>
+                    <button id="cancel-report">
+                        <i class="fa fa-undo"></i>
+                        Cancel
+                    </button>
+                </li>
+            </ul>
+        </header>

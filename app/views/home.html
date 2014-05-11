@@ -1,0 +1,132 @@
+<div ng-controller="MapCtrl"  ng-include="'views/inc/map.html'"></div>
+<!--        
+  <div id="content">
+    <div class="modal">
+      <div class="title">Sign Up</div>
+        <span class="close">&times;</span>
+        <form class="content">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder="E-mail" />
+        <input type="password" placeholder="Password" />
+        </form>
+    </div>
+  </div>
+-->
+        <div id="sidebar">
+            <h2><i class="fa fa-exclamation-triangle"></i> Incident Information</h2>
+            <div class="media-wrapper">
+                <div class="media">
+                    <i class="fa fa-circle-o img"></i>
+                    <div class="bd">
+                        Fire
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-flag-o img"></i>
+                    <div class="bd">
+                        Responded
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-map-marker img"></i>
+                    <div class="bd">
+                        Pasong Tima, Batanganes City
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-clock-o img"></i>
+                    <div class="bd">
+                        May 3, 2014 10:50 AM
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa fa-map-marker img"></i>
+                    <div class="bd">
+                        Fire is declared under control as of 8:25 PM. Not less than 5 houses was burned.
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fa fa-flag"></i> Response Units</h2>
+
+            <div class="media-wrapper">
+                <div class="media">
+                    <i class="fa img">&#xf007;</i>
+                    <div class="bd">
+                        25 Firemen
+                    </div>
+                </div>
+                <div class="media">
+                    <i class="fa img">&#xf134;</i>
+                    <div class="bd">
+                        3 Fire trucks
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fa fa-medkit"></i> Damage & Casualties</h2>
+            <!--            <div class="media-wrapper">
+                            <div class="media">
+                                <i class="fa img">&#xf007;</i>
+                                <div class="bd">
+                                    1 M peso worth of properties
+                                </div>
+                            </div>
+                            <div class="media">
+                                <i class="fa img">&#xf134;</i>
+                                <div class="bd">
+                                    1 Dead
+                                </div>
+                            </div>
+                            <div class="media">
+                                <i class="fa img">&#xf134;</i>
+                                <div class="bd">
+                                    5 Injured
+                                </div>
+                            </div>
+                        </div>-->
+            <div class="none">0 casualties reported</div>
+
+            <h2><i class="fa fa-bullhorn"></i> Citizen Reports</h2>
+            <div class="comments media-wrapper">
+                <div class="media">
+                    <img class="avatar img" src="http://graph.facebook.com/nelonoel/picture" />
+                    <div class="bd">
+                        <a class="name" href="#">Aaron Noel De Leon</a>
+                        The fire was too huge. Please send in more help as you could.
+                    </div>
+                </div>
+                <div class="media">
+                    <img class="avatar img" src="http://graph.facebook.com/iamspix/picture" />
+                    <div class="bd">
+                        <a class="name" href="#">Joey Hipolito</a>
+                        Tulong! Tuloooong! Sakloloooo. Kailangan ko ng tulong niyoooo. O, 
+                        superhero na pwedeng arkilaheeeen.
+                    </div>
+                </div>
+            </div>
+            <!--<div class="none">No comments yet. Be the first!</div>-->
+            <!--Comment box should not appear if user is not logged in-->
+            <input type="text" id="txtComment" placeholder="Enter your comment.." />
+            <button id="btnComment">Submit</button>
+        </div>
+
+        <span id="sidebar-toggle">
+            <i class="fa fa-chevron-left"></i>
+        </span>
+
+        <header>
+            <img class="logo" src="images/logo.png" alt="Alisto.PH">
+            <input id="pac-input" type="text"
+                   placeholder="Enter location">
+            <ul class="menu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li>
+                    <button ng-show="isLoggedIn()" ng-controller="MainCtrl" ng-click="login('facebook')">
+                        <i class="fa fa-facebook-square"></i> Login
+                    </button>
+                </li>
+            </ul>
+        </header>
