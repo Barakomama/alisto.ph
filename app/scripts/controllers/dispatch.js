@@ -29,12 +29,17 @@ angular.module('alistophApp')
     $scope.getSelectedValue = function(model){
       return model.value;
     }
+
+    $scope.getSelectedIncident = function() {
+      return $scope.selectedIncident;
+    }
+
     $scope.setSelectedIncident = function(event,incident){
-      SelectedIncidentService.setSelectedIncident(incident);
-      console.log(SelectedIncidentService.getSelectedIncident());
+      $scope.selectedIncident = incident;
+      console.log($scope.selectedIncident);
     }
     $scope.modify = function(field,value){
-      console.log(SelectedIncidentService.getSelectedIncident().id, field, value);
+      console.log($scope.selectedIncident.id, field, value);
     }
 
     $scope.respond = function() {

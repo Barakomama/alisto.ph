@@ -37,7 +37,7 @@
                 <div class="media">
                     <i class="fa fa-map-marker img"></i>
                     <div class="bd">
-                        <input ng-change="modify('address', selectedIncident.address)" type="text" class="line-input" placeholder="Address" ng-model="selectedIncident.address">
+                        <input ng-change="modify('address', selectedIncident.address)" type="text" class="line-input" placeholder="{{selectedIncident.coordinates.lat}}" ng-model="selectedIncident.coordinates.lat">
                     </div>
                 </div>
                 <div class="media">

@@ -3,6 +3,8 @@
 angular.module('alistophApp')
   .controller('MainCtrl', function ($scope, AuthService, UserService, IncidentService, AgencyService) {
 
+    $scope.currentUser = {};
+
     $scope.login = function (provider) {
       AuthService.login(provider);
     };
