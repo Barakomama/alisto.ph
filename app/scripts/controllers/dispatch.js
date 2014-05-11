@@ -2,9 +2,11 @@
 
 angular.module('alistophApp')
   .controller('DispatchCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.date = new Date();
+    
+    $scope.selectedIncident = {};
+
+    $scope.modify = function(field){
+
+    }
   });
