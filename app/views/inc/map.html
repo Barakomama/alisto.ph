@@ -1,0 +1,5 @@
+<map ng-controller="MapCtrl" id="map-canvas" center="[12.000000, 117.97616]" zoom="6" styles="{{map.styles}}" zoom-control="true" zoom-control-options="{style:'small',position:'right_bottom'}" pan-control='false' street-view-control='false'>
+  <marker ng-repeat="incident in incidents" position='[{{incident.coordinates.lat}},{{incident.coordinates.long}}]' icon="images/markers/{{incident.type}}.png">
+    
+  </marker>
+</map>
